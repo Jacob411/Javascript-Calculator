@@ -20,27 +20,9 @@ body{
     display: flex;
 
 }
-.row2 div {
-    flex-grow: 1;
-    border: solid;
-    padding: 20px;
-}
-.row2 div:hover {
-    background-color: aliceblue;
-
-}
-
 .row3 {
     display: flex;
     color: green;
-}
-.row3 div {
-    flex-grow: 1;
-    border: solid;
-    padding: 20px;
-}
-.row3 div:hover {
-    background-color: aliceblue;
 }
 
 .row4 {
@@ -48,24 +30,17 @@ body{
     display: flex;
 
 }
-.row4 div {
-    flex-grow: 1;
-    border: solid;
-    padding: 20px;
-}
-.row4 div:hover {
-    background-color: aliceblue;
-}
-
 .row5 {
     color: brown;
     display: flex;
 }
-.row5 div {
+.row2 div, .row3 div, .row4 div, .row5 div{
     flex-grow: 1;
     border: solid;
     padding: 20px;
 }
-.row5 div:hover {
+.row2 div:hover, .row3 div:hover, .row4 div:hover, .row5 div:hover{
     background-color: aliceblue;
+
 }
+
