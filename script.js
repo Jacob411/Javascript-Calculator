@@ -44,6 +44,7 @@ const display = function(e) {
 function clear(e) {
   sumOf = 0;
   row1Div.textContent = "";
+  resultBox.textContent = "";
 }
 
 function addToEntry() {
