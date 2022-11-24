@@ -13,8 +13,14 @@ const sum = function(args) {
 const multiply = function(a) {
   return a.reduce((acc, curr) => (acc * curr), 1)
 };
-
+row1 = document.querySelector('.row1')
+let sumOf = 0;
+row1.textContent = sumOf
 const seven = document.querySelector('.seven')
-seven.addEventListener('click', () => {
-    alert("works")
-})
+function display(e) {
+  const divToChange = document.getElementById(e.target.id)
+  divToChange.style.background= 'blue'
+
+  e.stopPropagation()
+}
+seven.addEventListener('click', display)
