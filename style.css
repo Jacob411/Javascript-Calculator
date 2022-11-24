@@ -1,0 +1,51 @@
+body{
+    width: 500px;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    font-size: 25px;
+    border: solid;
+    padding: 20px;
+}
+.row1 {
+    border: solid;
+}
+.row2 {
+    color: blue;
+    display: flex;
+
+}
+.row2 div {
+    flex-grow: 1;
+    border: solid;
+    padding: 20px;
+}
+.row3 {
+    display: flex;
+    color: green;
+}
+.row3 div {
+    flex-grow: 1;
+    border: solid;
+    padding: 20px;
+}
+.row4 {
+    color: purple;
+    display: flex;
+
+}
+.row4 div {
+    flex-grow: 1;
+    border: solid;
+    padding: 20px;
+}
+.row5 {
+    color: brown;
+    display: flex;
+}
+.row5 div {
+    flex-grow: 1;
+    border: solid;
+    padding: 20px;
+}
