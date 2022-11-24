@@ -1,6 +1,9 @@
 body{
+    margin: auto;
+    background-color: rgb(36, 36, 37);
+    border-radius: 30px;
     width: 500px;
-    color: red;
+    color: rgb(99, 32, 32);
     display: flex;
     flex-direction: column;
     font-weight: bold;
@@ -12,7 +15,9 @@ body{
 
 .row1 {
     border: solid;
-    height: 40px
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .row2 {
@@ -35,12 +40,19 @@ body{
     display: flex;
 }
 .row2 div, .row3 div, .row4 div, .row5 div{
+    color: gray;
+    border-radius: 30px;
     flex-grow: 1;
     border: solid;
+    justify-content: space-around;
     padding: 20px;
 }
 .row2 div:hover, .row3 div:hover, .row4 div:hover, .row5 div:hover{
-    background-color: aliceblue;
+    background-color: wheat;
 
 }
 
+.row2 div:active, .row3 div:active, .row4 div:active, .row5 div:active{
+    background-color: white;
+
+}

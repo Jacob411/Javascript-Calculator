@@ -1,11 +1,12 @@
-const add = function(a, b) {
+function operate(operator, a, b) {
+if(operator == '+') {
 	return a + b
 };
 
-const subtract = function(a, b) {
+if(operator == '-') {
   return a - b
 };
-
+}
 const sum = function(args) {
   return args.reduce((acc, curr) => (acc + curr), 0)
 };
@@ -13,7 +14,7 @@ const sum = function(args) {
 const multiply = function(a) {
   return a.reduce((acc, curr) => (acc * curr), 1)
 };
-
+const resultBox = document.querySelector('.resultBox');
 const row1Div = document.querySelector('.row1');
 const plusDiv = document.querySelector('.plus');
 const nineDiv = document.querySelector('.nine');
@@ -32,7 +33,10 @@ const decimalDiv = document.querySelector('.decimal');
 const clearDiv = document.querySelector('.clear');
 const equalsDiv = document.querySelector('.equals');
 
-
+let lastOp = 'none'
+let sumOf = 0
+let val1 = 0
+let val2 = 0
 sumArray = []
 const display = function(e) {
   row1Div.textContent += e.target.textContent;
@@ -40,36 +44,27 @@ const display = function(e) {
 function clear(e) {
   sumOf = 0;
   row1Div.textContent = "";
-  sumArray = []
 }
 
 function addToEntry() {
-  val1 = row1Div.textContent
-  sumArray.push(val1)
-  sumArray.push('+')
-  row1Div.textContent = "+"
-  alert(sumArray)
+  valToAdd = Number(row1Div.textContent)
+  sumOf += valToAdd
+  row1Div.textContent = ""
 }
 function minusToEntry() {
   val1 = row1Div.textContent
-  sumArray.push(val1)
-  sumArray.push('-')
   row1Div.textContent = "-"
-  alert(sumArray)
 }
 function multiplyToEntry() {
   val1 = row1Div.textContent
-  sumArray.push(val1)
-  sumArray.push('*')
   row1Div.textContent = "*"
-  alert(sumArray)
 }
 function equals() {
-  alert("equals")
-  for(let i =0; i < sumArray.length; i++) {
-    if(typeof sumArray == 'number')
-  }
+  val2 = Number(row1Div.textContent)
+  let result = Number(val2) + sumOf
+  resultBox.textContent = result
 }
+
 sevenDiv.addEventListener('click', display);
 eightDiv.addEventListener('click', display);
 nineDiv.addEventListener('click', display);
