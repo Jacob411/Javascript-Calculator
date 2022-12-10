@@ -102,8 +102,14 @@ function divideToEntry() {
 function equalsCommand() {
   lastVal = Number(row1Div.textContent)
   total = operate(lastOp, total, lastVal)
+  
   row1Div.textContent = ""
-  resultBox.textContent = total;
+  if (!Number.isInteger(total)) {
+    resultBox.textContent = "= " + total.toFixed(4);
+  }
+  else {
+    resultBox.textContent = "= " + total;
+  }
   lastOp = 'none'
 }
 
