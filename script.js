@@ -46,15 +46,28 @@ const zeroDiv = document.querySelector('.zero');
 const decimalDiv = document.querySelector('.decimal');
 const clearDiv = document.querySelector('.clear');
 const equalsDiv = document.querySelector('.equals');
+const backspaceDiv = document.querySelector('.backspace');
 
 let lastOp = 'none'
 let firstVal = 0
 let lastVal = 0
 let total = 0
 const display = function(e) {
-  
-  row1Div.textContent += e.target.textContent;
-  value += e.target.textContent;
+  if(e.target.textContent == '.') {
+    if(row1Div.textContent.includes('.')){
+      return;
+    }
+    else {
+      row1Div.textContent += '.';
+    }
+  }
+  else {
+    row1Div.textContent += e.target.textContent;
+    value += e.target.textContent;
+  }
+}
+function backspaceCommand() {
+  row1Div.textContent = row1Div.textContent.slice(0, -1)
 }
 function clear(e) {
   total = 0;
@@ -104,7 +117,8 @@ fourDiv.addEventListener('click', display);
 oneDiv.addEventListener('click', display);
 twoDiv.addEventListener('click', display);
 threeDiv.addEventListener('click', display);
-zeroDiv.addEventListener('click', display)
+zeroDiv.addEventListener('click', display);
+decimalDiv.addEventListener('click', display);
 
 clearDiv.addEventListener('click', clear);
 plusDiv.addEventListener('click', addToEntry);
@@ -112,3 +126,4 @@ minusDiv.addEventListener('click', minusToEntry);
 timesDiv.addEventListener('click', multiplyToEntry);
 divideDiv.addEventListener('click', divideToEntry)
 equalsDiv.addEventListener('click', equals);
+backspaceDiv.addEventListener('click', backspaceCommand)
