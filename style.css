@@ -39,7 +39,10 @@ body{
     color: brown;
     display: flex;
 }
-.row2 div, .row3 div, .row4 div, .row5 div{
+.row6{
+    display: flex;
+}
+.row2 div, .row3 div, .row4 div, .row5 div, .row6 div{
     color: gray;
     border-radius: 30px;
     flex-grow: 1;
@@ -47,12 +50,16 @@ body{
     justify-content: space-around;
     padding: 20px;
 }
-.row2 div:hover, .row3 div:hover, .row4 div:hover, .row5 div:hover{
+.row2 div:hover, .row3 div:hover, .row4 div:hover, .row5 div:hover, .row6 div:hover{
     background-color: wheat;
 
 }
 
-.row2 div:active, .row3 div:active, .row4 div:active, .row5 div:active{
+.row2 div:active, .row3 div:active, .row4 div:active, .row5 div:active, .row6 div:active{
     background-color: white;
 
+}
+
+.zero {
+    width: 33%;
 }

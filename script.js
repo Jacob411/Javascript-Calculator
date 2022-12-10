@@ -1,11 +1,23 @@
 function operate(operator, a, b) {
 if(operator == '+') {
 	return a + b
-};
-
-if(operator == '-') {
+}
+else if(operator == 'none') {
+  return a + b
+}
+else if(operator == '-') {
   return a - b
-};
+}
+else if(operator == '*') {
+  return a * b
+}
+else if(operator == '/') {
+  return a / b
+}
+else {
+  return 99999;
+}
+
 }
 const sum = function(args) {
   return args.reduce((acc, curr) => (acc + curr), 0)
@@ -14,8 +26,10 @@ const sum = function(args) {
 const multiply = function(a) {
   return a.reduce((acc, curr) => (acc * curr), 1)
 };
+
 const resultBox = document.querySelector('.resultBox');
 const row1Div = document.querySelector('.row1');
+const divideDiv = document.querySelector('.divide')
 const plusDiv = document.querySelector('.plus');
 const nineDiv = document.querySelector('.nine');
 const eightDiv = document.querySelector('.eight');
@@ -34,36 +48,51 @@ const clearDiv = document.querySelector('.clear');
 const equalsDiv = document.querySelector('.equals');
 
 let lastOp = 'none'
-let sumOf = 0
-let val1 = 0
-let val2 = 0
-sumArray = []
+let firstVal = 0
+let lastVal = 0
+let total = 0
 const display = function(e) {
+  
   row1Div.textContent += e.target.textContent;
+  value += e.target.textContent;
 }
 function clear(e) {
-  sumOf = 0;
+  total = 0;
   row1Div.textContent = "";
   resultBox.textContent = "";
 }
 
 function addToEntry() {
-  valToAdd = Number(row1Div.textContent)
-  sumOf += valToAdd
+  lastVal = Number(row1Div.textContent)
   row1Div.textContent = ""
+  total = operate(lastOp, total, lastVal)
+  //total += lastVal
+  lastOp = '+'
 }
 function minusToEntry() {
-  val1 = row1Div.textContent
-  row1Div.textContent = "-"
+  lastVal = Number(row1Div.textContent)
+  row1Div.textContent = ""
+  total = operate(lastOp, total, lastVal)
+  lastOp = '-'
 }
 function multiplyToEntry() {
-  val1 = row1Div.textContent
-  row1Div.textContent = "*"
+  lastVal = Number(row1Div.textContent)
+  row1Div.textContent = ""
+  total = operate(lastOp, total, lastVal)
+  lastOp = '*'
+}
+function divideToEntry() {
+  lastVal = Number(row1Div.textContent)
+  row1Div.textContent = ""
+  total = operate(lastOp, total, lastVal)
+  lastOp = '/'
 }
 function equals() {
-  val2 = Number(row1Div.textContent)
-  let result = Number(val2) + sumOf
-  resultBox.textContent = result
+  lastVal = Number(row1Div.textContent)
+  total = operate(lastOp, total, lastVal)
+  row1Div.textContent = ""
+  resultBox.textContent = total;
+  lastOp = 'none'
 }
 
 sevenDiv.addEventListener('click', display);
@@ -75,9 +104,11 @@ fourDiv.addEventListener('click', display);
 oneDiv.addEventListener('click', display);
 twoDiv.addEventListener('click', display);
 threeDiv.addEventListener('click', display);
+zeroDiv.addEventListener('click', display)
 
 clearDiv.addEventListener('click', clear);
 plusDiv.addEventListener('click', addToEntry);
 minusDiv.addEventListener('click', minusToEntry);
 timesDiv.addEventListener('click', multiplyToEntry);
+divideDiv.addEventListener('click', divideToEntry)
 equalsDiv.addEventListener('click', equals);
