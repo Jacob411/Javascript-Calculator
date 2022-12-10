@@ -47,7 +47,6 @@ const decimalDiv = document.querySelector('.decimal');
 const clearDiv = document.querySelector('.clear');
 const equalsDiv = document.querySelector('.equals');
 const backspaceDiv = document.querySelector('.backspace');
-
 let lastOp = 'none'
 let firstVal = 0
 let lastVal = 0
@@ -100,13 +99,14 @@ function divideToEntry() {
   total = operate(lastOp, total, lastVal)
   lastOp = '/'
 }
-function equals() {
+function equalsCommand() {
   lastVal = Number(row1Div.textContent)
   total = operate(lastOp, total, lastVal)
   row1Div.textContent = ""
   resultBox.textContent = total;
   lastOp = 'none'
 }
+
 
 sevenDiv.addEventListener('click', display);
 eightDiv.addEventListener('click', display);
@@ -124,6 +124,6 @@ clearDiv.addEventListener('click', clear);
 plusDiv.addEventListener('click', addToEntry);
 minusDiv.addEventListener('click', minusToEntry);
 timesDiv.addEventListener('click', multiplyToEntry);
-divideDiv.addEventListener('click', divideToEntry)
-equalsDiv.addEventListener('click', equals);
-backspaceDiv.addEventListener('click', backspaceCommand)
+divideDiv.addEventListener('click', divideToEntry);
+equalsDiv.addEventListener('click', equalsCommand);
+backspaceDiv.addEventListener('click', backspaceCommand);
