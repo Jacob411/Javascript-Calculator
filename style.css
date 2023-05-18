@@ -1,66 +1,77 @@
-body{
-    margin: auto;
-    background-color: rgb(36, 36, 37);
-    border-radius: 30px;
-    width: 500px;
-    color: rgb(99, 32, 32);
+body {
+    margin: 100px auto 0;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    width: 400px;
     display: flex;
     flex-direction: column;
-    font-weight: bold;
-    font-size: 25px;
-    border: solid;
+    font-family: Arial, sans-serif;
+  }
+  
+  .calculator {
     padding: 20px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-.topBox {
-
-    background-color: white;
+  }
+  
+  .topBox {
+    background-color: #f8f8f8;
     display: flex;
-    border: solid;
-    height: 45px;
     border-radius: 10px;
     margin-bottom: 20px;
-    font-size: 40px;
+    font-size: 32px;
     justify-content: space-between;
-}
-.resultBox {
+  }
+  
+  .resultBox {
     text-align: right;
     width: 50%;
-    color: red;
-}
-
-.row1 {
+    padding-right: 10px;
+    color: rgb(83, 173, 209);
+  }
+  
+  .row1 {
     max-width: 50%;
     text-align: center;
-    color: rebeccapurple;
-    width: 50%;
-}
-
-.row2, .row2, .row3, .row4, .row5, .row6 {
+    color: #7e57c2;
+  }
+  
+  .row2,
+  .row3,
+  .row4,
+  .row5,
+  .row6 {
     display: flex;
-}
-.row2 button, .row3 button, .row4 button, .row5 button, .row6 button{
-    color: black;
-    border-radius: 30px;
+  }
+  
+  button {
     flex-grow: 1;
-    border: solid;
-    justify-content: space-around;
-    padding: 20px;
-}
-.row2 button:hover, .row3 button:hover, .row4 button:hover, .row5 button:hover, .row6 button:hover{
-    background-color: wheat;
-
-}
-
-.row2 button:active, .row3 button:active, .row4 button:active, .row5 button:active, .row6 button:active{
-    background-color: white;
-
-}
-
-.zero, .clear{
+    font-size: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ccc;
+  }
+  
+  button:active {
+    background-color: #bbb;
+  }
+  
+  .zero,
+  .clear {
     width: 33%;
-}
-
-.times:focus, .divide:focus, .plus:focus, .minus:focus{
-    background-color: rgb(111, 157, 226);
-}
+  }
+  
+  .times:focus,
+  .divide:focus,
+  .plus:focus,
+  .minus:focus {
+    background-color: #536dfe;
+    color: #fff;
+  }
+  
