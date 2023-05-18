@@ -2,7 +2,7 @@
 
 This is a simple calculator application implemented in JavaScript, using HTML and CSS as well. It allows you to perform basic mathematical calculations such as addition, subtraction, multiplication, and division.
 
-![Calculator Screenshot](calculator.png)
+![Calculator Screenshot](calc-screenshot.png)
 
 ## Features
 
