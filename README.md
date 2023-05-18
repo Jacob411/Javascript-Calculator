@@ -13,3 +13,4 @@ This is a simple calculator application implemented in JavaScript, using HTML an
 - Keyboard support for entering numbers and performing calculations.
 
 ## Getting Started
+Check out the live demo [here](https://your-username.github.io/Javascript-Calculator/).
